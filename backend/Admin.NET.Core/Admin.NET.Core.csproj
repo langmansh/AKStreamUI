@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DocumentationFile>Admin.NET.Core.xml</DocumentationFile>
+    <AssemblyName>Admin.NET.Core</AssemblyName>
+    <Company>Admin.NET.Core</Company>
+    <Version>1.0.0</Version>
+    <Authors>Admin.NET.Core</Authors>
+    <Product>Admin.NET.Core</Product>
+    <Description></Description>
+    <Copyright></Copyright>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType></RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Admin.NET.Core.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Furion.Extras.Admin.NET\Furion.Extras.Admin.NET.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=localhost;Database=Furion;User ID=Furion;Password=Furion;pooling=true;port=3306;sslmode=none;CharSet=utf8;",
+    //"MultiTenantConnection": "Data Source=./Admin.NET_SaaS.db",
+    //"PgSqlConnection": "HOST=127.0.0.1;PORT=5432;DATABASE=Admin.NET;PASSWORD=123qwe;USER ID=postgres;",
+    //"SqlServerConnectionString": "Server=localhost;Database=Furion;User=sa;Password=000000;MultipleActiveResultSets=True;",
+    //"Sqlite3ConnectionString": "Data Source=./Furion.db",
+    "MySqlConnectionString": "Data Source=127.0.0.1;Database=Furion;User ID=Furion;Password=Furion;pooling=true;port=3306;sslmode=none;CharSet=utf8mb4;",
+    "MultiTenantConnection": "Data Source=127.0.0.1;Database=SaaS;User ID=SaaS;Password=SaaSSaaS;pooling=true;port=3306;sslmode=none;CharSet=utf8mb4;"
+  }
+}

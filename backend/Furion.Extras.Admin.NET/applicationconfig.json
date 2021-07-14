@@ -1,0 +1,85 @@
+{
+  "SpecificationDocumentSettings": {
+    "DocumentTitle": "Admin.NET",
+    "DocExpansionState": "None",
+    "GroupOpenApiInfos": [
+      {
+        "Group": "Default",
+        "Title": "Admin.NET通用权限管理平台",
+        "Description": "前后端分离架构，开箱即用，紧随前沿技术。<br/><a href='https://gitee.com/zuohuaijun/Admin.NET/'>https://gitee.com/zuohuaijun/Admin.NET</a>",
+        "Version": "1.0.0"
+      }
+    ]
+  },
+  "JWTSettings": {
+    "ValidateIssuerSigningKey": true, // 是否验证密钥，bool 类型，默认true
+    "IssuerSigningKey": "3c1cbc3f546eda35168c3aa3cb91780fbe703f0996c6d123ea96dc85c70bbc0a", // 密钥，string 类型，必须是复杂密钥，长度大于16
+    "ValidateIssuer": true, // 是否验证签发方，bool 类型，默认true
+    "ValidIssuer": "dilon", // 签发方，string 类型
+    "ValidateAudience": true, // 是否验证签收方，bool 类型，默认true
+    "ValidAudience": "dilon", // 签收方，string 类型
+    "ValidateLifetime": true, // 是否验证过期时间，bool 类型，默认true，建议true
+    "ExpiredTime": 1440, // 过期时间，long 类型，单位分钟，默认20分钟
+    "ClockSkew": 5 // 过期时间容错值，long 类型，单位秒，默认5秒
+  },
+  "Cache": {
+    "CacheType": "MemoryCache", // RedisCache MemoryCache
+    "RedisConnectionString": "127.0.0.1:6379,password=app123=,defaultDatabase=2",
+    "InstanceName": "dilon_"
+  },
+  "SnowId": {
+    "WorkerId": "1" // 取值范围0~63,默认1
+  },
+  "OAuth": {
+    "Wechat": {
+      "app_id": "wx2959fdd3abc05362",
+      "app_key": "829f65b2be0652bcd50ea8cb820fd7fa",
+      "redirect_uri": "http://127.0.0.1:56868/oauth/wechatcallback",
+      "scope": "snsapi_userinfo"
+    }
+  },
+  "UploadFile": {
+    // 阿里云OSS配置
+    "Aliyun": {
+      "path": "Dilon/Upload",
+      "maxSize": 1048576,
+      "contentType": [ "image/jpg", "image/png", "image/jpeg", "image/gif", "image/bmp", "text/plain", "application/pdf", "application/msword", "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.presentationml.presentation" ]
+    },
+    // 头像
+    "Avatar": {
+      "path": "Upload/Avatar",
+      "maxSize": 1048576,
+      "contentType": [ "image/jpg", "image/png", "image/jpeg", "image/gif" ]
+    },
+    // 文档
+    "Document": {
+      "path": "Upload/Document",
+      "maxSize": 1048576,
+      "contentType": [ "image/jpg", "image/png", "image/jpeg", "image/gif", "image/bmp", "text/plain", "application/pdf", "application/msword", "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.presentationml.presentation" ]
+    },
+    // 商店
+    "Shop": {
+      "path": "Upload/Shop",
+      "maxSize": 1048576,
+      "contentType": [ "image/jpg", "image/png", "image/jpeg", "image/gif" ]
+    },
+    // 默认
+    "Default": {
+      "path": "Upload/Default",
+      "maxSize": 1048576,
+      "contentType": [ "image/jpg", "image/png", "image/jpeg", "image/gif", "image/bmp", "text/plain", "application/pdf", "application/msword", "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.presentationml.presentation" ]
+    }
+  },
+  "OSSProvider": {
+    "Provider": "QCloud",
+    "Endpoint": "AppId",
+    "Region": "ap-chengdu",
+    "AccessKey": "A****************************z",
+    "SecretKey": "g6I***************la",
+    "IsEnableCache": true
+  },
+  "AKStream": {
+    "ApiUrl": "http://11.11.201.22:5800",
+    "AccessKey": "047I4WS1-U51UBO6W-1J4BT21P-MF17IT99-92J8WIHU-944Q4KIW"
+  }
+}

@@ -1,0 +1,38 @@
+# Build and Release Folders
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
+
+# Other files and folders
+.settings/
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.
+/backend/Admin.NET.Web.Entry/Logs
+/backend/.vs
+/backend/.idea
+/backend/Admin.NET.Web.Entry/publish
+/backend/Admin.NET.Database.Migrations/Migrations
+/backend/Admin.NET.Web.Entry/Properties/PublishProfiles
+/backend/Admin.NET.Core/Admin.NET.Core.csproj.user
+/backend/Admin.NET.Web.Entry/Admin.NET.Web.Entry.csproj.user
+/.vs
+/.idea
+/backend/Admin.NET.Web.Entry/templates
+/backend/Admin.NET.Web.Entry/wwwroot/Upload
+
+# xml 文件忽略
+/**/*.xml
+
+# lock 文件忽略
+/**/*.lock
+
+/outputs/
