@@ -23,7 +23,8 @@
 （1）新建一个数据库，还原 database 目录下的 .sql 文件
 （2）清空 VideoChannel 表的数据。
 （3）配置 backend/Admin.NET.Database.Migrations 项目下的 dbsettings.json 数据库链接文件，使用默认 DefaultConnection 链接。
-（4）修改 AKStream 数据库链接与本项目使用一致。
+（4）修改 backend/Furion.Extras.Admin.NET 项目下的 applicationconfig.json 文件，最后 AKStream节点配置AKStream的接口URL和AccessKey
+（5）修改 AKStream 数据库链接与本项目使用一致。
 * 启动前端：打开frontend文件夹，进行依赖下载，运行 yarn install 命令，再运行 yarn run serve
 * 浏览器访问：`http://localhost:81` （默认前端端口为：81，后台端口为：5566）
 
