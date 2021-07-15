@@ -78,11 +78,6 @@ namespace Admin.NET.Application
         public string RecordPlanName { get; set; }
         
         /// <summary>
-        /// 台账ID
-        /// </summary>
-        public string SpjkTZID { get; set; }
-        
-        /// <summary>
         /// 自动录制
         /// </summary>
         public System.UInt64 AutoRecord { get; set; }

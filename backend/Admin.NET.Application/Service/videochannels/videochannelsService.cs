@@ -46,7 +46,6 @@ namespace Admin.NET.Application
             var entities = await _rep.DetachedEntities
                                      .Where(!string.IsNullOrEmpty(input.ChannelId), u => u.ChannelId == input.ChannelId)
                                      .Where(!string.IsNullOrEmpty(input.DeviceId), u => u.DeviceId == input.DeviceId)
-                                     .Where(!string.IsNullOrEmpty(input.SpjkTZID), u => u.SpjkTZID == input.SpjkTZID)
                                      .Where(!string.IsNullOrEmpty(input.VideoDeviceType), u => u.VideoDeviceType == input.VideoDeviceType)
                                      .Where(!string.IsNullOrEmpty(input.ChannelName), u => u.ChannelName == input.ChannelName)
                                      .Where(!string.IsNullOrEmpty(input.MainId), u => u.MainId == input.MainId)

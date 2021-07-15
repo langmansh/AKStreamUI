@@ -44,7 +44,6 @@ namespace Admin.NET.EntityFramework.Core
         public DateTime UpdateTime { get; set; }
         public ulong? Enabled { get; set; }
         public ulong? NoPlayerBreak { get; set; }
-        public string SpjkTZID { get; set; }
         public int? RecordSecs { get; set; }
     
         public void Configure(EntityTypeBuilder<videochannels> entityBuilder, DbContext dbContext, Type dbContextLocator)
@@ -174,10 +173,6 @@ namespace Admin.NET.EntityFramework.Core
                 entityBuilder.Property(e => e.RtpWithTcp)
                     .HasColumnType("bit(1)")
                     .HasComment("Rtp设备是否使用Tcp推流");
-
-                entityBuilder.Property(e => e.SpjkTZID)
-                    .HasMaxLength(255)
-                    .HasComment("台账ID");
 
                 entityBuilder.Property(e => e.UpdateTime)
                     .HasColumnType("datetime(3)")

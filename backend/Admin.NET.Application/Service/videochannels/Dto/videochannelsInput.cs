@@ -75,11 +75,6 @@ namespace Admin.NET.Application
         public virtual string RecordPlanName { get; set; }
         
         /// <summary>
-        /// 台账ID
-        /// </summary>
-        public virtual string SpjkTZID { get; set; }
-        
-        /// <summary>
         /// 自动录制
         /// </summary>
         public virtual System.UInt64 AutoRecord { get; set; }
