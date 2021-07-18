@@ -22,12 +22,12 @@ namespace Admin.NET.Application
         /// <summary>
         /// 更新时间
         /// </summary>
-        public virtual DateTime UpdateTime { get; set; }
+        public virtual DateTime? UpdateTime { get; set; }
         
         /// <summary>
         /// 创建时间
         /// </summary>
-        public virtual DateTime CreateTime { get; set; }
+        public virtual DateTime? CreateTime { get; set; }
         
         /// <summary>
         /// 默认端口
