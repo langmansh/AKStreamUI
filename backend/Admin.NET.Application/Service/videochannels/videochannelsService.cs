@@ -233,6 +233,56 @@ namespace Admin.NET.Application
 
             return result;
         }
+        /// <summary>
+        /// 增加设备管理
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPost("/MediaServer/AddVideoChannel")]
+        public async Task<dynamic> AddVideoChannel(AddvideochannelsInput input)
+        {
+            var entity = input.Adapt<videochannels>();
+            string apiUrl = _configuration["AKStream:ApiUrl"];
+            var result = await $"{apiUrl}/MediaServer/AddVideoChannel".SetHeaders(new
+            {
+                AccessKey = _configuration["AKStream:AccessKey"]
+            }).SetBody(new
+            {
+                mainId = entity.MainId,
+                mediaServerId = entity.MediaServerId,
+                vhost = entity.Vhost,
+                app = entity.App,
+                channelName = entity.ChannelName,
+                departmentId = entity.DepartmentId,
+                departmentName = entity.DepartmentName,
+                pDepartmentId = entity.PDepartmentId,
+                pDepartmentName = entity.PDepartmentName,
+                deviceNetworkType = entity.DeviceNetworkType,
+                deviceStreamType = entity.DeviceStreamType,
+                methodByGetStream = entity.MethodByGetStream,
+                videoDeviceType = entity.VideoDeviceType,
+                autoVideo = entity.AutoVideo,
+                autoRecord = entity.AutoRecord,
+                recordSecs = entity.RecordSecs,
+                recordPlanName = entity.RecordPlanName,
+                ipV4Address = entity.IpV4Address,
+                ipV6Address = entity.IpV6Address,
+                hasPtz = entity.HasPtz,
+                deviceId = entity.DeviceId,
+                channelId = entity.ChannelId,
+                rtpWithTcp = entity.RtpWithTcp,
+                videoSrcUrl = entity.VideoSrcUrl,
+                defaultRtpPort = entity.DefaultRtpPort,
+                createTime = entity.CreateTime,
+                updateTime = entity.UpdateTime,
+                enabled = entity.Enabled,
+                noPlayerBreak = entity.NoPlayerBreak
+            }, "application/json").OnException((res, errors) => {
+                //激活异步拦截 此处可以做记录日志操作 也可保持现状
+            }).PostAsync();
+
+            return result;
+        }
         #endregion
 
     }

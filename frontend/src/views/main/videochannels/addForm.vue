@@ -24,10 +24,10 @@
           <a-switch v-decorator="['rtpWithTcp', { valuePropName: 'checked' }]" />
         </a-form-item>
         <a-form-item label="通道ID" :labelCol="labelCol" :wrapperCol="wrapperCol" has-feedback>
-          <a-input placeholder="请输入通道ID" v-decorator="['channelId']" />
+          <a-input placeholder="请输入通道ID" v-decorator="['channelId',{rules: [{ required: true, message: '请填写设备通道ID' }]}]" />
         </a-form-item>
         <a-form-item label="设备ID" :labelCol="labelCol" :wrapperCol="wrapperCol" has-feedback>
-          <a-input placeholder="请输入设备ID" v-decorator="['deviceId']" />
+          <a-input placeholder="请输入设备ID" v-decorator="['deviceId',{rules: [{ required: true, message: '请填写设备ID' }]}]" />
         </a-form-item>
         <a-form-item label="云台" :labelCol="labelCol" :wrapperCol="wrapperCol" has-feedback>
           <a-switch v-decorator="['hasPtz', { valuePropName: 'checked' }]" />
@@ -36,7 +36,7 @@
           <a-input placeholder="请输入ipv6地址" v-decorator="['ipV6Address']" />
         </a-form-item>
         <a-form-item label="ipv4地址" :labelCol="labelCol" :wrapperCol="wrapperCol" has-feedback>
-          <a-input placeholder="请输入ipv4地址" v-decorator="['ipV4Address']" />
+          <a-input placeholder="请输入ipv4地址" v-decorator="['ipV4Address',{rules: [{ required: true, message: '请填写IP地址' }]}]" />
         </a-form-item>
         <a-form-item label="录制计划模板名称" :labelCol="labelCol" :wrapperCol="wrapperCol" has-feedback>
           <a-input placeholder="请输入录制计划模板名称" v-decorator="['recordPlanName']" />
@@ -48,22 +48,22 @@
           <a-switch v-decorator="['autoRecord', { valuePropName: 'checked' }]" />
         </a-form-item>
         <a-form-item label="设备类型" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-select style="width: 100%" placeholder="请选择设备类型" v-decorator="['videoDeviceType', {rules: [{ required: true, message: '请选择设备类型！' }]}]">
+          <a-select style="width: 100%" placeholder="请选择设备类型" v-decorator="['videoDeviceType']">
             <a-select-option v-for="(item,index) in videoDeviceTypeData" :key="index" :value="item.code">{{ item.name }}</a-select-option>
           </a-select>
         </a-form-item>
         <a-form-item label="非rtp设备拉流方式" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-select style="width: 100%" placeholder="请选择非rtp设备拉流方式" v-decorator="['methodByGetStream', {rules: [{ required: true, message: '请选择非rtp设备拉流方式！' }]}]">
+          <a-select style="width: 100%" placeholder="请选择非rtp设备拉流方式" v-decorator="['methodByGetStream',{rules: [{ required: true, message: '请填写设备拉流方式' }]}]">
             <a-select-option v-for="(item,index) in methodByGetStreamData" :key="index" :value="item.code">{{ item.name }}</a-select-option>
           </a-select>
         </a-form-item>
         <a-form-item label="设备的流类型" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-select style="width: 100%" placeholder="请选择设备的流类型" v-decorator="['deviceStreamType', {rules: [{ required: true, message: '请选择设备的流类型！' }]}]">
+          <a-select style="width: 100%" placeholder="请选择设备的流类型" v-decorator="['deviceStreamType',{rules: [{ required: true, message: '请填写设备的流类型' }]}]">
             <a-select-option v-for="(item,index) in deviceStreamTypeData" :key="index" :value="item.code">{{ item.name }}</a-select-option>
           </a-select>
         </a-form-item>
         <a-form-item label="设备的网络类型" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-select style="width: 100%" placeholder="请选择设备的网络类型" v-decorator="['deviceNetworkType', {rules: [{ required: true, message: '请选择设备的网络类型！' }]}]">
+          <a-select style="width: 100%" placeholder="请选择设备的网络类型" v-decorator="['deviceNetworkType']">
             <a-select-option v-for="(item,index) in deviceNetworkTypeData" :key="index" :value="item.code">{{ item.name }}</a-select-option>
           </a-select>
         </a-form-item>
@@ -83,13 +83,13 @@
           <a-input placeholder="请输入通道名称" v-decorator="['channelName']" />
         </a-form-item>
         <a-form-item label="app" :labelCol="labelCol" :wrapperCol="wrapperCol" has-feedback>
-          <a-input placeholder="请输入app" v-decorator="['app']" />
+          <a-input placeholder="请输入app" v-decorator="['app',{rules: [{ required: true, message: '请填写app的值为：rtp' }]}]" />
         </a-form-item>
         <a-form-item label="vhost" :labelCol="labelCol" :wrapperCol="wrapperCol" has-feedback>
-          <a-input placeholder="请输入vhost" v-decorator="['vhost']" />
+          <a-input placeholder="请输入vhost" v-decorator="['vhost',{rules: [{ required: true, message: '请填写vhost的值为：__defaultVhost__' }]}]" />
         </a-form-item>
         <a-form-item label="流媒体服务器ID" :labelCol="labelCol" :wrapperCol="wrapperCol" has-feedback>
-          <a-input placeholder="请输入流媒体服务器ID" v-decorator="['mediaServerId']" />
+          <a-input placeholder="请输入流媒体服务器ID" v-decorator="['mediaServerId',{rules: [{ required: true, message: '请填写流媒体服务的ID' }]}]" />
         </a-form-item>
         <a-form-item label="设备ID" :labelCol="labelCol" :wrapperCol="wrapperCol" has-feedback>
           <a-input placeholder="请输入设备ID" v-decorator="['mainId']" />
@@ -107,7 +107,8 @@
 
 <script>
   import {
-    videochannelsAdd
+    // videochannelsAdd
+	AddVideoChannel
   } from '@/api/modular/main/videochannelsManage'
 
   export default {
@@ -160,12 +161,17 @@
             }
             values.updateTime = this.updateTimeDateString
             values.createTime = this.createTimeDateString
-            videochannelsAdd(values).then((res) => {
+            AddVideoChannel(values).then((res) => {
               if (res.success) {
-                this.$message.success('新增成功')
-                this.confirmLoading = false
-                this.$emit('ok', values)
-                this.handleCancel()
+				  if(res.data.isSuccessStatusCode){
+					  this.$message.success('新增成功')
+					  this.confirmLoading = false
+					  this.$emit('ok', values)
+					  this.handleCancel()
+				  }else{
+					  this.$message.error('新增失败：' + JSON.stringify(res.data.reasonPhrase))
+				  }
+                
               } else {
                 this.$message.error('新增失败：' + JSON.stringify(res.message))
               }

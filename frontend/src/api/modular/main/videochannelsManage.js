@@ -1,4 +1,4 @@
-﻿import { axios } from '@/utils/request'
+import { axios } from '@/utils/request'
 
 /**
  * 查询设备管理
@@ -60,6 +60,19 @@ export function videochannelsEdit (parameter) {
 export function videochannelsDelete (parameter) {
   return axios({
     url: '/videochannels/delete',
+    method: 'post',
+    data: parameter
+  })
+}
+
+/**
+ * 添加设备管理
+ *
+ * @author langmansh
+ */
+export function AddVideoChannel (parameter) {
+  return axios({
+    url: '/MediaServer/AddVideoChannel',
     method: 'post',
     data: parameter
   })

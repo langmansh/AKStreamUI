@@ -25,4 +25,3 @@ export function livevideoFun (parameter) {
     params: parameter
   })
 }
-
